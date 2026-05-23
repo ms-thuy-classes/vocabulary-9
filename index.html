@@ -1175,7 +1175,7 @@ function buildMatchImage(q) {
   const opts = shuffle([q.vocab, ...q.wrongs.slice(0,3)]);
   return `<div class="question-text">Match this word to the correct image:</div>
   <div style="font-size:1.5rem;font-weight:800;text-align:center;color:var(--lavender-deep);margin:12px 0">${q.vocab.word}</div>
-  <div class="choices">${opts.map(o=>`<button class="choice" style="font-size:1.1rem" data-val="${o.word}" data-correct="${q.vocab.word}">${o.emoji} ${o.word}</button>`).join('')}</div>
+  <div class="choices">${opts.map(o=>`<button class="choice" style="font-size:3rem; display:flex; justify-content:center; align-items:center; padding:20px;" data-val="${o.word}" data-correct="${q.vocab.word}">${o.emoji}</button>`).join('')}</div>
   <div id="feedback"></div><button class="btn btn-primary next-btn hidden" id="nextBtn" onclick="nextQ()">Next →</button>`;
 }
 function buildUnscramble(q) {
