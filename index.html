@@ -1164,12 +1164,21 @@ function buildFillBlank(q) {
   <div class="choices">${opts.map(o=>`<button class="choice" data-val="${o.word}" data-correct="${q.vocab.word}">${o.word}</button>`).join('')}</div>
   <div id="feedback"></div><button class="btn btn-primary next-btn hidden" id="nextBtn" onclick="nextQ()">Next →</button>`;
 }
-function buildImageChoice(q) {
+function buildImageToWords(q) {
+  // Trộn đều đáp án đúng và các đáp án sai
   const opts = shuffle([q.vocab, ...q.wrongs.slice(0,3)]);
-  return `<div class="question-text">What word matches this image?</div>
-  <div style="font-size:5rem;text-align:center;margin:16px 0">${q.vocab.emoji}</div>
-  <div class="choices">${opts.map(o=>`<button class="choice" data-val="${o.word}" data-correct="${q.vocab.word}">${o.word} — ${o.meaning}</button>`).join('')}</div>
-  <div id="feedback"></div><button class="btn btn-primary next-btn hidden" id="nextBtn" onclick="nextQ()">Next →</button>`;
+  
+  return `<div class="question-text">Look at the image and choose the correct word:</div>
+  <!-- Hiển thị hình ảnh/emoji to, rõ ràng ở giữa -->
+  <div style="font-size:4rem; text-align:center; margin:20px 0;">${q.vocab.emoji}</div>
+  
+  <!-- Các phương án lựa chọn chỉ giữ lại từ tiếng Anh (o.word) -->
+  <div class="choices">
+    ${opts.map(o => `<button class="choice" data-val="${o.word}" data-correct="${q.vocab.word}">${o.word}</button>`).join('')}
+  </div>
+  
+  <div id="feedback"></div>
+  <button class="btn btn-primary next-btn hidden" id="nextBtn" onclick="nextQ()">Next →</button>`;
 }
 function buildMatchImage(q) {
   const opts = shuffle([q.vocab, ...q.wrongs.slice(0,3)]);
