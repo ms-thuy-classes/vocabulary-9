@@ -1164,7 +1164,7 @@ function buildFillBlank(q) {
   <div class="choices">${opts.map(o=>`<button class="choice" data-val="${o.word}" data-correct="${q.vocab.word}">${o.word}</button>`).join('')}</div>
   <div id="feedback"></div><button class="btn btn-primary next-btn hidden" id="nextBtn" onclick="nextQ()">Next →</button>`;
 }
-function buildImageToWords(q) {
+function buildImageChoice(q) {
   // Trộn đều đáp án đúng và các đáp án sai
   const opts = shuffle([q.vocab, ...q.wrongs.slice(0,3)]);
   
