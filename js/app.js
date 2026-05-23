@@ -20,6 +20,7 @@ function navigateTo(view, lessonId = null) {
       break;
     case 'flashcard':
       container.innerHTML = renderFlashcard(appState.currentLessonId);
+      updateCard();
       break;
     case 'quiz':
       appState.currentExerciseIndex = 0; // Reset khi bắt đầu làm bài
