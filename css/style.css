@@ -146,3 +146,130 @@ body {
   box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
   transform: translateY(-2px);
 }
+/* Layout lưới chia 2 cột linh hoạt cho đáp án */
+.dynamic-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.dynamic-grid-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* Kiểu chữ lớn hiển thị từ vựng/emoji */
+.target-display-word {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #6c5ce7;
+  margin: 20px 0;
+}
+
+.target-display-emoji {
+  font-size: 4.5rem;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.font-emoji-large {
+  font-size: 3rem !important;
+  padding: 15px !important;
+}
+
+/* Ô chứa lắp ghép từ và câu (Unscramble) */
+.unscramble-answer-box {
+  min-height: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dashed #a29bfe;
+  border-radius: 16px;
+  padding: 12px;
+  margin: 15px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Các mảnh khối chữ cái/từ vựng */
+.letters-pool {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.letter-tile, .word-tile {
+  background: #fff;
+  border: 1px solid var(--glass-border);
+  padding: 10px 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.letter-tile:hover, .word-tile:hover {
+  transform: translateY(-2px);
+  background: #f0e6ff;
+}
+
+.letter-tile.used, .word-tile.used {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Trò chơi cứu bông hoa (Hangman) */
+.hangman-display {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.hangman-slot {
+  font-size: 2rem;
+  font-weight: 800;
+  border-bottom: 4px solid #6c5ce7;
+  width: 35px;
+  text-align: center;
+  color: #2f3542;
+}
+
+.keyboard-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.key-tile {
+  background: rgba(255,255,255,0.8);
+  border: none;
+  padding: 10px 0;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.key-used { opacity: 0.4; }
+
+/* Thông báo đúng sai */
+#feedback, .alert-success, .alert-danger {
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  margin: 15px 0;
+}
+.alert-success { background-color: #d4edda; color: #155724; }
+.alert-danger { background-color: #f8d7da; color: #721c24; }
+.btn-next { background: #6c5ce7; color: white; border: none; padding: 12px 30px; border-radius: 50px; cursor: pointer; float: right; font-weight: bold;}
